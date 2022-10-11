@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot). URLTextSearcher Code borrowed from com.github.hansen-m.download.AuraliaCloud</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Auralia 7 Cloud. Important: You must override SCHOOL_CODE with the value unique to your organization.</string>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.download.Auralia7Cloud</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>AuraliaCloud</string>
+        <key>SCHOOL_CODE</key>
+        <string>#</string>
+        <key>SEARCH_URL</key>
+        <string>https://www.risingsoftware.com/cloudsupport/downloads</string>
+        <key>SEARCH_PATTERN</key>
+        <string>(?P&lt;url&gt;https://download\.risingsoftware\.com/desktop/v7/(?P&lt;version1&gt;.*?)/auralia_m_(?P&lt;version2&gt;.*?)_cloud.pkg)</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%SEARCH_URL%?school_code=%SCHOOL_CODE%</string>
+                <key>re_pattern</key>
+                <string>%SEARCH_PATTERN%</string>
+            </dict>
+        </dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.pkg</string>
+                <key>url</key>
+                <string>%url%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Rising Software Australia Pty Ltd (NQMN77T7W6)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
