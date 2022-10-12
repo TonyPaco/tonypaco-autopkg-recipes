@@ -17,7 +17,7 @@
         <key>SEARCH_URL</key>
         <string>https://www.risingsoftware.com/cloudsupport/downloads</string>
         <key>SEARCH_PATTERN</key>
-        <string>(?P&lt;url&gt;https://download\.risingsoftware\.com/desktop/v7/(?P&lt;version1&gt;.*?)/musition_m_(?P&lt;version2&gt;.*?)_cloud.pkg)</string>
+        <string>(https://download\.risingsoftware\.com/desktop/v7/(.*?)/musition_m_(.*?)_cloud.pkg)</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -39,8 +39,8 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.pkg</string>
-                <key>url</key>
-                <string>%url%</string>
+		                <key>url</key>
+ 		               <string>%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
