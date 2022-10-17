@@ -13,7 +13,7 @@
         <key>SEARCH_URL</key>
         <string>https://www.kurzweiledu.com/k3mac</string>
         <key>SEARCH_PATTERN</key>
-        <string>(?P&lt;url&gt;https://www\.kurzweiledu\.com/installv[0-9]{2}_mac_wl)</string>
+        <string>(https://www\.kurzweiledu\.com/installv[0-9]{2}_mac_wl)</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
