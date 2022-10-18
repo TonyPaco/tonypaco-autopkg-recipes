@@ -15,7 +15,7 @@
         <key>SEARCH_URL</key>
         <string>https://gyazo.com/download</string>
         <key>SEARCH_PATTERN</key>
-		<string>(https://files.gyazo.com/setup/Gyazo-(.*?).dmg)</string>
+		<string>(https://files\.gyazo\.com/setup/Gyazo-(.*?)\.dmg)</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
