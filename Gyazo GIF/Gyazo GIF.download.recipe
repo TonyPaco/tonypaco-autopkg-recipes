@@ -15,13 +15,13 @@
         <key>SEARCH_URL</key>
         <string>https://gyazo.com/download</string>
         <key>SEARCH_PATTERN</key>
-		<string>https://files.gyazo.com/setup/Gyazo-3.9.4.dmg</string>
+		<string>https://[\S]+\/dmg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
-        <dict>
+       <dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
             <key>Arguments</key>
@@ -30,6 +30,8 @@
                 <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
                 <string>%SEARCH_PATTERN%</string>
+                <key>result_output_var_name</key>
+                <string>match</string>
             </dict>
         </dict>
 		<dict>
