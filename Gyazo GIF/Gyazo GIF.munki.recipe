@@ -20,14 +20,12 @@
 			<array>
 				<string>Incoming</string>
 			</array>
-			<key>category</key>
-			<string>Utilities</string>
 			<key>description</key>
-			<string>Take screen captures you can share now and easily search later, if you’re too special to use the built-in macOS tools.</string>
+			<string> </string>
 			<key>developer</key>
 			<string>Nota Inc.</string>
 			<key>display_name</key>
-			<string>Gyazo</string>
+			<string>Gyazo GIF</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
