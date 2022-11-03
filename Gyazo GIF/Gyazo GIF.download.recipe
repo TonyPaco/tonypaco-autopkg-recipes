@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>gyazo</string>
         <key>SEARCH_URL</key>
-        <string>https://gyazo.com/download</string>
+        <string>https://formulae.brew.sh/cask/gyazo</string>
         <key>SEARCH_PATTERN</key>
 		<string>(https://files.gyazo.com/setup/Gyazo-([0-9]+.[0-9]+.[0-9]+).dmg)</string>
 	</dict>
