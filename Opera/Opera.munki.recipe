@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest Opera disk image and imports into Munki. Also sets a force install by date of one week.</string>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.munki.Opera</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/Opera</string>
+		<key>NAME</key>
+		<string>Opera</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>Campus</string>
+				<string>Labs</string>
+			</array>
+			<key>category</key>
+			<string>Internet</string>
+			<key>description</key>
+			<string>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+  &lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;meta name="Generator" content="Cocoa HTML Writer"&gt;
+  &lt;meta name="CocoaVersion" content="1671.6"&gt;
+  &lt;style type="text/css"&gt;
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {text-decoration: underline ; font-kerning: none; color: #0000e9}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p class="p1"&gt;&lt;span class="s1"&gt;Latest release notes can usually be found here: &lt;a target="_blank" href="https://blogs.opera.com/desktop/"&gt;&lt;span class="s2"&gt;https://blogs.opera.com/desktop/&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s1"&gt;Opera is a fast and secure browser trusted by millions of users. With the intuitive interface, Speed Dial and visual bookmarks for organizing favorite sites, news feature with fresh, relevant content, speed-boosting Opera Turbo mode and more handy features, Opera has everything you need to do more on the web. Also, with 1700+ available extensions, you can mix and match additional features to customize the browser the way you want.&lt;/span&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+			<key>developer</key>
+			<string>Opera Software</string>
+			<key>display_name</key>
+			<string>Opera [Universal]</string>
+			<key>icon_name</key>
+			<string>opera_browser.png</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/usr/bin/env zsh
+# Add directory traversal for the entire application and ensure all executables are executable by group and other
+ 
+/bin/chmod -R go+rX /Applications/Opera.app
+
+# Disable Auto-Updater
+sudo defaults write /Library/Preferences/com.operasoftware.Opera OPDisableAutoUpdate true
+
+exit 0
+</string>
+			<key>postuninstall_script</key>
+			<string>#!/usr/bin/env zsh
+if [[ -e "/Applications/Opera Internet Browser.app" ]]; then
+	rm -R "/Applications/Opera Internet Browser.app"
+fi
+
+exit 0
+</string>
+			<key>preinstall_script</key>
+			<string>#!/bin/sh
+if [[ -e "/Applications/Opera Internet Browser.app" ]]; then
+	rm -R "/Applications/Opera Internet Browser.app"
+fi
+
+exit 0
+</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+		<key>version_comparison_key</key>
+		<string>CFBundleVersion</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.keeleysam.recipes.Opera.download</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/Opera.dmg/Opera.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>deltas</key>
+				<array>
+					<dict>
+						<key>datetime_format</key>
+						<string>%Y-%m-%dT%H:%M:%SZ</string>
+						<key>direction</key>
+						<string>future</string>
+						<key>interval</key>
+						<dict>
+							<key>weeks</key>
+							<integer>1</integer>
+						</dict>
+						<key>output_name</key>
+						<string>force_after</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.haircut.processors/DatetimeOutputter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>additional_makepkginfo_options</key>
+				<array>
+					<string>--force_install_after_date</string>
+					<string>%force_after%</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
