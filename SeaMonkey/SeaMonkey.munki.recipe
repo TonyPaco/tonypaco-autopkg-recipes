@@ -50,10 +50,38 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>deltas</key>
+				<array>
+					<dict>
+						<key>datetime_format</key>
+						<string>%Y-%m-%dT%H:%M:%SZ</string>
+						<key>direction</key>
+						<string>future</string>
+						<key>interval</key>
+						<dict>
+							<key>weeks</key>
+							<integer>1</integer>
+						</dict>
+						<key>output_name</key>
+						<string>force_after</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.haircut.processors/DatetimeOutputter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>additional_makepkginfo_options</key>
+				<array>
+					<string>--force_install_after_date</string>
+					<string>%force_after%</string>
+				</array>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

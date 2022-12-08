@@ -16,72 +16,17 @@
 		<dict>
 			<key>catalogs</key>
 			<array>
-				<string>Campus</string>
-				<string>Labs</string>
+				<string>testing</string>
 			</array>
-			<key>category</key>
-			<string>Internet</string>
 			<key>description</key>
-			<string>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
-  &lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
-  &lt;title&gt;&lt;/title&gt;
-  &lt;meta name="Generator" content="Cocoa HTML Writer"&gt;
-  &lt;meta name="CocoaVersion" content="1671.6"&gt;
-  &lt;style type="text/css"&gt;
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-    span.s2 {text-decoration: underline ; font-kerning: none; color: #0000e9}
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;p class="p1"&gt;&lt;span class="s1"&gt;Latest release notes can usually be found here: &lt;a target="_blank" href="https://blogs.opera.com/desktop/"&gt;&lt;span class="s2"&gt;https://blogs.opera.com/desktop/&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p class="p1"&gt;&lt;span class="s1"&gt;Opera is a fast and secure browser trusted by millions of users. With the intuitive interface, Speed Dial and visual bookmarks for organizing favorite sites, news feature with fresh, relevant content, speed-boosting Opera Turbo mode and more handy features, Opera has everything you need to do more on the web. Also, with 1700+ available extensions, you can mix and match additional features to customize the browser the way you want.&lt;/span&gt;&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</string>
-			<key>developer</key>
-			<string>Opera Software</string>
+			<string>Opera products enable more than 350 million internet consumers to discover and connect with the content and services that matter most to them, no matter what device, network or location. In turn, we help advertisers reach the audiences that build value for their businesses. Opera also delivers products and services to more than 120 operators around the world, enabling them to provide a faster, more economical and better network experience to their subscribers.</string>
 			<key>display_name</key>
-			<string>Opera [Universal]</string>
-			<key>icon_name</key>
-			<string>opera_browser.png</string>
+			<string>Opera</string>
 			<key>name</key>
 			<string>%NAME%</string>
-			<key>postinstall_script</key>
-			<string>#!/usr/bin/env zsh
-# Add directory traversal for the entire application and ensure all executables are executable by group and other
- 
-/bin/chmod -R go+rX /Applications/Opera.app
-
-# Disable Auto-Updater
-sudo defaults write /Library/Preferences/com.operasoftware.Opera OPDisableAutoUpdate true
-
-exit 0
-</string>
-			<key>postuninstall_script</key>
-			<string>#!/usr/bin/env zsh
-if [[ -e "/Applications/Opera Internet Browser.app" ]]; then
-	rm -R "/Applications/Opera Internet Browser.app"
-fi
-
-exit 0
-</string>
-			<key>preinstall_script</key>
-			<string>#!/bin/sh
-if [[ -e "/Applications/Opera Internet Browser.app" ]]; then
-	rm -R "/Applications/Opera Internet Browser.app"
-fi
-
-exit 0
-</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
-		<key>version_comparison_key</key>
-		<string>CFBundleVersion</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
