@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Opera disk image and imports into Munki. Also sets a force install by date of one week.</string>
+	<string>Downloads the latest Opera disk image and imports into Munki. Also sets a force install by date of one week at 4PM.</string>
 	<key>Identifier</key>
 	<string>com.github.tonypaco.munki.Opera</string>
 	<key>Input</key>
