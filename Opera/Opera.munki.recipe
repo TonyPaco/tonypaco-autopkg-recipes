@@ -52,7 +52,7 @@
 				<array>
 					<dict>
 						<key>datetime_format</key>
-						<string>%Y-%m-%dT%H:%M:%SZ</string>
+						<string>%Y-%m-%d</string>
 						<key>direction</key>
 						<string>future</string>
 						<key>interval</key>
@@ -90,7 +90,7 @@
 				<key>additional_makepkginfo_options</key>
 				<array>
 					<string>--force_install_after_date</string>
-					<string>%force_after%</string>
+					<string>%force_after%T16:00:00Z</string>
 				</array>
 			</dict>
 			<key>Processor</key>
