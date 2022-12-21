@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of RStudio and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.tonypaco.munki.RStudio</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/RStudio</string>
+        <key>NAME</key>
+        <string>RStudio</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+        <key>category</key>
+        <string>Mathematics</string>
+        <key>developer</key>
+        <string>RStudio</string>
+        <key>display_name</key>
+        <string>RStudio</string>
+			<key>description</key>
+			<string>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+		&lt;html&gt;
+		&lt;head&gt;
+		  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+		  &lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
+		  &lt;title&gt;&lt;/title&gt;
+		  &lt;meta name="Generator" content="Cocoa HTML Writer"&gt;
+		  &lt;meta name="CocoaVersion" content="1561.6"&gt;
+		  &lt;style type="text/css"&gt;
+			p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #404040}
+			span.s1 {font-kerning: none}
+			span.s2 {text-decoration: underline ; font-kerning: none; color: #0000ee; -webkit-text-stroke: 0px #42709b}
+		  &lt;/style&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+		&lt;p class="p1"&gt;&lt;span class="s1"&gt;Full release notes can usually be found here: &lt;a target="_blank" href="https://www.rstudio.com/products/rstudio/release-notes/"&gt;https://www.rstudio.com/products/rstudio/release-notes/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+		&lt;p class="p1"&gt;&lt;span class="s1"&gt;&lt;br&gt;
+		&lt;/span&gt;&lt;/p&gt;
+		&lt;p class="p1"&gt;&lt;span class="s1"&gt;RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. &lt;a target="_blank" href="https://www.rstudio.com/products/rstudio/features/"&gt;&lt;span class="s2"&gt;Click here to see more RStudio features.&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+		&lt;/body&gt;
+		&lt;/html&gt;
+		</string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+    		<key>unattended_install</key>
+    		<true/>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.rtrouton.download.RStudio</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
