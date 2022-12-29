@@ -5,9 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of StatPlus and imports it into Munki.</string>
+	<string>Downloads the latest version of StatPlusLE and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.tonypaco.munki.StatPlus</string>
+	<string>com.github.tonypaco.munki.StatPlusLE</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
