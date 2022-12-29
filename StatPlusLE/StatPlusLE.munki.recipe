@@ -54,7 +54,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.tonypaco.download.StatPlus</string>
+	<string>com.github.tonypaco.download.StatPlusLE</string>
 	<key>Process</key>
 	<array>
 		<dict>
