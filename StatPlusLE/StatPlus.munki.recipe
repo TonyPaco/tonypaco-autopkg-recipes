@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of StatPlus and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.munki.StatPlus</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>StatPlusLE</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>Incoming</string>
+			</array>
+	<key>description</key>
+	<string>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+  &lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;meta name="Generator" content="Cocoa HTML Writer"&gt;
+  &lt;meta name="CocoaVersion" content="2022.6"&gt;
+  &lt;style type="text/css"&gt;
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p class="p1"&gt;&lt;span class="s1"&gt;Meet StatPlus:mac LE — a free edition of StatPlus:mac Professional developed by AnalystSoft. If you are using a Mac and Microsoft Excel for Mac or Apple Numbers for daily analytical and statistical purposes, StatPlus:mac LE is exactly what you need to get started! Get a powerful statistical tool for free – now with a set of new essential features - without leaving Excel.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s1"&gt;No matter if you are an experienced user migrating from a familiar toolset or a novice exploring the capabilities of the new software, StatPlus:mac LE gives you an easily configured workspace with a vast array of tools. This free application demonstrates qualities typically only available in costly specialized suites – consistency and accuracy of results, reliability, plenty of data analysis models and tools, various data types, graphs, charts and much, much more.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s1"&gt;&lt;a href="https://www.analystsoft.com/en/products/statplusmacle/"&gt;https://www.analystsoft.com/en/products/statplusmacle/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+			<key>developer</key>
+			<string>AnalystSoft Inc.</string>
+			<key>display_name</key>
+			<string>StatPlus</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.tonypaco.download.StatPlus</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%dmg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
