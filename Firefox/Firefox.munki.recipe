@@ -53,8 +53,8 @@ See the following URLs for more info:
 						<string>future</string>
 						<key>interval</key>
 						<dict>
-							<key>weeks</key>
-							<integer>1</integer>
+							<key>days</key>
+							<integer>3</integer>
 						</dict>
 						<key>output_name</key>
 						<string>force_after</string>
