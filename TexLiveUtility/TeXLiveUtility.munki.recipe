@@ -43,6 +43,7 @@
 	<key>ParentRecipe</key>
 	<string>com.github.scriptingosx.download.TeXLiveUtility</string>
 	<key>Process</key>
+	<array>
 		<dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
@@ -54,7 +55,6 @@
 				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 			</dict>
 		</dict>
-	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
