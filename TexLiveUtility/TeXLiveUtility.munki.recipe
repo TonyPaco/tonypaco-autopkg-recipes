@@ -41,8 +41,19 @@
 	<key>MinimumVersion</key>
 	<string>0.4.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.pkg.TeXLiveUtility</string>
+	<string>com.github.scriptingosx.download.TeXLiveUtility</string>
 	<key>Process</key>
+		<dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+			</dict>
+		</dict>
 	<array>
 		<dict>
 			<key>Arguments</key>
