@@ -69,7 +69,7 @@
 					<string>--itemname</string>
 					<string>Igor Pro 9 Folder</string>
 					<string>--file</string>
-					<string>Igor Pro 9 Folder/Igor64.app</string>
+					<string>%pathname%/Igor Pro 9 Folder/Igor64.app</string>
 				</array>
 			</dict>
 			<key>Processor</key>
