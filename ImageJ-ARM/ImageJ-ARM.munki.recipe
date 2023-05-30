@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of ImageJ and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.tonypaco.munki.ImageJ</string>
+	<string>com.github.tonypaco.munki.ImageJ-ARM</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
