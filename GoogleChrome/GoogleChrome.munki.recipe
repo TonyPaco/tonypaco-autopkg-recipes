@@ -51,7 +51,7 @@
 						<key>interval</key>
 						<dict>
 							<key>days</key>
-							<integer>%FORCEDAYS%</integer>
+							<integer>FORCEDAYS</integer>
 						</dict>
 						<key>output_name</key>
 						<string>force_after</string>
