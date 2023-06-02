@@ -4,6 +4,7 @@
 <dict>
     <key>Description</key>
     <string>Downloads the latest Google Chrome disk image and imports into Munki. Sets a force install date of FORCEDAYS (integrer) into the future at FORCETIME (HH:MM:SS). Defaults are 3 days at 16:00:00.</string>
+    <string>Downloads the latest Google Chrome disk image and imports into Munki.</string>
     <key>Identifier</key>
     <string>com.github.tonypaco.munki.GoogleChrome</string>
     <key>Input</key>
@@ -72,6 +73,7 @@
 				<array>
 					<string>--force_install_after_date</string>
 					<string>%force_after%T%FORCETIME%Z</string>
+					<string>%force_after%T16:00:00Z</string>
 				</array>
            </dict>
             <key>Processor</key>
