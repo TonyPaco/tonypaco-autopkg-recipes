@@ -12,13 +12,6 @@
         <string>GoogleChrome</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps</string>
-<<<<<<< HEAD
-        <key>FORCEDAYS</key>
-        <string>3</string>
-        <key>FORCETIME</key>
-        <string>16:00:00</string>
-=======
->>>>>>> parent of 2d76e48 (Update GoogleChrome.munki.recipe)
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -54,11 +47,7 @@
 						<key>interval</key>
 						<dict>
 							<key>days</key>
-<<<<<<< HEAD
-							<integer>FORCEDAYS</integer>
-=======
 							<integer>3</integer>
->>>>>>> parent of 2d76e48 (Update GoogleChrome.munki.recipe)
 						</dict>
 						<key>output_name</key>
 						<string>force_after</string>
