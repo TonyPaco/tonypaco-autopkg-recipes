@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest Google Chrome disk image and imports into Munki.</string>
+    <string>Downloads the latest Google Chrome disk image and imports into Munki. Sets a force install date of FORCEDAYS (integrer) into the future at FORCETIME (HH:MM:SS). Defaults are 3 days at 16:00:00.</string>
     <key>Identifier</key>
     <string>com.github.tonypaco.munki.GoogleChrome</string>
     <key>Input</key>
@@ -12,6 +12,10 @@
         <string>GoogleChrome</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps</string>
+        <key>FORCEDAYS</key>
+        <integer>3</integer>
+        <key>FORCETIME</key>
+        <string>16:00:00</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -47,7 +51,7 @@
 						<key>interval</key>
 						<dict>
 							<key>days</key>
-							<integer>3</integer>
+							<integer>%FORCEDAYS%</integer>
 						</dict>
 						<key>output_name</key>
 						<string>force_after</string>
@@ -67,7 +71,7 @@
  				<key>additional_makepkginfo_options</key>
 				<array>
 					<string>--force_install_after_date</string>
-					<string>%force_after%T16:00:00Z</string>
+					<string>%force_after%T%FORCETIME%Z</string>
 				</array>
            </dict>
             <key>Processor</key>
