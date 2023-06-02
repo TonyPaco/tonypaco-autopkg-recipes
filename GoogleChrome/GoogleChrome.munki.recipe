@@ -13,7 +13,7 @@
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps</string>
         <key>FORCEDAYS</key>
-        <string>3</string>
+        <integer>3</integer>
         <key>FORCETIME</key>
         <string>16:00:00</string>
         <key>pkginfo</key>
