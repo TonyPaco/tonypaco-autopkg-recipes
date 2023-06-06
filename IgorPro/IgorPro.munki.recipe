@@ -8,6 +8,8 @@
 	<string>com.github.tonypaco.munki.IgorPro9</string>
 	<key>Input</key>
 	<dict>
+    	<key>DERIVE_MIN_OS</key>
+        <string>YES</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
@@ -42,7 +44,7 @@
 				<key>source_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/IgorPro9.dmg/Igor Pro 9 Folder</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<string>%RECIPE_CACHE_DIR%/unpacked/Applications/Igor Pro 9 Folder</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -53,11 +55,19 @@
 				<key>faux_root</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked</string>
 				<key>installs_item_paths</key>
-				<string>/Igor Pro 9 Folder/Igor64.app</string>
+                <array>
+				<string>/Applications/Igor Pro 9 Folder/Igor64.app</string>
+                 </array>
+              <key>derive_minimum_os_version</key>
+                <string>%DERIVE_MIN_OS%</string>
 			</dict>
-			<key>Processor</key>
+ 			<key>Processor</key>
 			<string>MunkiInstallsItemsCreator</string>
 		</dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
