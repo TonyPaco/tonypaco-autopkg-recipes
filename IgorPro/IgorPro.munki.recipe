@@ -39,6 +39,28 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/IgorPro9.dmg/Igor Pro 9 Folder</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>faux_root</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<key>installs_item_paths</key>
+				<string>/Igor Pro 9 Folder/Igor64.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiInstallsItemsCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>input_plist_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/IgorPro9.dmg/Igor Pro 9 Folder/Igor64.app/Contents/Info.plist</string>
 			</dict>
@@ -72,6 +94,14 @@
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>
