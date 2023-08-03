@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/%NAME%</string>
+		<string>labs/FocusriteControl/%NAME%</string>
 		<key>NAME</key>
 		<string>Focusrite Control</string>
 		<key>pkginfo</key>
@@ -23,7 +23,7 @@
 			</array>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>Incoming</string>
 			</array>
 			<key>description</key>
 			<string> </string>
