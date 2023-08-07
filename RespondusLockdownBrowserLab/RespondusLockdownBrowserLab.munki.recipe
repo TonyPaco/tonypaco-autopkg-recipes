@@ -117,12 +117,60 @@ mkdir -p /var/root/Library/Logs
         </dict>
         <dict>
             <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>INSTITUTION_ID == "FILLINYOURINSTITUTIONID"</string>
+            </dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>FileCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>file_content</key>
+	            <string>%INSTITUTION_ID%
+	            </string>
+                <key>file_mode</key>
+                <string>0644</string>
+                <key>file_path</key>
+                <string>%RECIPE_CACHE_DIR%/application_payload/Applications/LockDown Browser.app/id.txt</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>LAB_HASH == "FILLINYOURLABHASH"</string>
+            </dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+        </dict>
+       <dict>
+            <key>Processor</key>
+            <string>FileCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>file_content</key>
+	            <string>%LAB_HASH%
+	            </string>
+                <key>file_mode</key>
+                <string>0644</string>
+                <key>file_path</key>
+                <string>%RECIPE_CACHE_DIR%/application_payload/Applications/LockDown Browser.app/lab.txt</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Arguments</key>
                 <dict>
                     <key>faux_root</key>
                     <string>%RECIPE_CACHE_DIR%/application_payload</string>
                     <key>installs_item_paths</key>
                     <array>
                         <string>/Applications/LockDown Browser.app</string>
+                       <string>/Applications/LockDown Browser.app/id.txt</string>
+                       <string>/Applications/LockDown Browser.app/lab.txt</string>
                     </array>
                 </dict>
             <key>Processor</key>
@@ -155,36 +203,7 @@ mkdir -p /var/root/Library/Logs
                     </dict>
                 </dict>
         </dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>predicate</key>
-                <string>LAB_HASH == "FILLINYOURLABHASH"</string>
-            </dict>
-            <key>Processor</key>
-            <string>StopProcessingIf</string>
-        </dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>pattern</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Install*.pkg</string>
-            </dict>
-            <key>Processor</key>
-            <string>FileFinder</string>
-        </dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>source</key>
-                <string>%found_filename%</string>
-                <key>target</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Install Respondus LockDown Browser (x64c) %INSTITUTION_ID%{%LAB_HASH%}.pkg</string>
-            </dict>
-            <key>Processor</key>
-            <string>FileMover</string>
-        </dict>
-        <dict>
+         <dict>
             <key>Processor</key>
             <string>DmgCreator</string>
             <key>Arguments</key>
@@ -206,6 +225,19 @@ mkdir -p /var/root/Library/Logs
             <key>Processor</key>
             <string>MunkiImporter</string>
         </dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/application_payload</string>
+					<string>%RECIPE_CACHE_DIR%/pkg_unpack</string>
+					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>	
     </array>
 </dict>
 </plist>
