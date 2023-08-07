@@ -130,7 +130,8 @@ mkdir -p /var/root/Library/Logs
             <key>Arguments</key>
             <dict>
                 <key>file_content</key>
-	            <string>%INSTITUTION_ID%</string>
+	            <string>%INSTITUTION_ID%
+</string>
                 <key>file_mode</key>
                 <string>0644</string>
                 <key>file_path</key>
@@ -152,7 +153,8 @@ mkdir -p /var/root/Library/Logs
             <key>Arguments</key>
             <dict>
                 <key>file_content</key>
-	            <string>%LAB_HASH%</string>
+	            <string>%LAB_HASH%
+</string>
                 <key>file_mode</key>
                 <string>0644</string>
                 <key>file_path</key>
