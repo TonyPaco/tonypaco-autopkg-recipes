@@ -169,6 +169,24 @@ mkdir -p /var/root/Library/Logs
                     <key>installs_item_paths</key>
                     <array>
                         <string>/Applications/LockDown Browser.app</string>
+                    </array>
+                <key>version_comparison_key</key>
+                <string>CFBundleVersion</string>
+                </dict>
+            <key>Processor</key>
+            <string>MunkiInstallsItemsCreator</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+                <dict>
+                    <key>faux_root</key>
+                    <string>%RECIPE_CACHE_DIR%/application_payload</string>
+                    <key>installs_item_paths</key>
+                    <array>
                        <string>/Applications/LockDown Browser.app/id.txt</string>
                        <string>/Applications/LockDown Browser.app/lab.txt</string>
                     </array>
