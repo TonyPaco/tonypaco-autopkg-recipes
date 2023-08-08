@@ -182,9 +182,9 @@ exit 0</string>
 						<key>/Applications/LockDown Browser.app</key>
 						<string>CFBundleVersion</string>
 						<key>/Applications/LockDown Browser.app/id.txt</key>
-						<string></string>
+						<string>md5checksum</string>
 						<key>/Applications/LockDown Browser.app/lab.txt</key>
-						<string></string>
+						<string>md5checksum</string>
 					</dict>
                     <key>installs_item_paths</key>
                     <array>
