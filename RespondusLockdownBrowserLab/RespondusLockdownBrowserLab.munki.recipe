@@ -40,16 +40,25 @@
 # The installation will fail without this directory
 mkdir -p /var/root/Library/Logs
             </string>
+			<key>postinstall_script</key>
+			<string>#!/usr/bin/env zsh
+
+/bin/echo "%INSTITUTION_ID%" &gt; "/Applications/LockDown Browser.app/id.txt"
+/bin/chmod u=rw,go=r "/Applications/LockDown Browser.app/id.txt"
+
+/bin/echo "%LAB_HASH%" &gt; "/Applications/LockDown Browser.app/lab.txt"
+/bin/chmod u=rw,go=r "/Applications/LockDown Browser.app/lab.txt"
+
+exit 0</string>
             <key>uninstall_method</key>
             <string>uninstall_script</string>
-            <key>uninstall_script</key>
-            <string>#!/bin/bash
-                LDB='/Applications/LockDown Browser.app'
+ 			<key>uninstall_script</key>
+			<string>#!/usr/bin/env zsh   
 
-                if [ -a "$LDB" ]; then
-                    rm -r /Applications/LockDown\ Browser.app
-                fi
-            </string>
+/bin/rm -Rf "/Applications/LockDown Browser.app"
+/usr/sbin/pkgutil --forget com.respondus.LockdownBrowser.standard.pkg
+
+exit 0</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
