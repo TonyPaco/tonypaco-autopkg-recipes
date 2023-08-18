@@ -196,6 +196,8 @@ exit 0</string>
                 <dict>
                     <key>faux_root</key>
                     <string>%RECIPE_CACHE_DIR%/application_payload</string>
+                    <key>version_comparison_key</key>
+                    <string></string>
                     <key>installs_item_paths</key>
                     <array>
                        <string>/Applications/LockDown Browser.app/id.txt</string>
