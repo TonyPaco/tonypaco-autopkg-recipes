@@ -177,11 +177,11 @@ exit 0</string>
                     <string>%RECIPE_CACHE_DIR%/application_payload</string>
                     <key>derive_minimum_os_version</key>
                     <string>true</string>
+                    <key>version_comparison_key</key>
+                    <string>CFBundleVersion</string>
                     <key>installs_item_paths</key>
                     <array>
                        <string>/Applications/LockDown Browser.app</string>
-                       <string>/Applications/LockDown Browser.app/id.txt</string>
-                       <string>/Applications/LockDown Browser.app/lab.txt</string>
                     </array>
                 </dict>
             <key>Processor</key>
