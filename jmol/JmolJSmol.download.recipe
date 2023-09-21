@@ -40,6 +40,19 @@
 			<key>Processor</key>
 			<string>com.github.n8felton.shared/MD5Checksum</string>
 		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.jazzace.processors/TextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>text_in</key>
+				<string>%filename%</string>
+				<key>re_pattern</key>
+				<string>Jmol-([0-9]+.[0-9]+.[0-9]+)-binary.zip</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>
