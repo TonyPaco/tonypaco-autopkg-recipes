@@ -145,6 +145,7 @@
 			</dict>
 			<key>Processor</key>
 			<string>PathDeleter</string>
+		</dict>
 	</array>
 </dict>
 </plist>
