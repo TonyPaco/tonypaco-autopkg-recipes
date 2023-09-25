@@ -99,7 +99,6 @@
             <string>MunkiPkginfoMerger</string>
         </dict>
 		<dict>
-		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>additional_pkginfo</key>
