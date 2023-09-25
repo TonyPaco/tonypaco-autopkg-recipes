@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Jmol/JSmol and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.munki.JmolJSmol</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>jmol</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+	<key>description</key>
+	<string>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+  &lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;meta name="Generator" content="Cocoa HTML Writer"&gt;
+  &lt;meta name="CocoaVersion" content="1504.83"&gt;
+  &lt;style type="text/css"&gt;
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p class="p1"&gt;Jmol is a free, open source molecule viewer for students, educators, and researchers in chemistry, biochemistry, physics, and materials science. It is cross-platform, running on Windows, Mac OS X, and Linux/Unix systems.&lt;span class="Apple-converted-space"&gt; &lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p1"&gt;• The JSmol JmolApplet is a web browser JavaScript application that can be integrated easily into web pages. Though Java-based for development and management, JSmol is completely JavaScript.&lt;/p&gt;
+&lt;p class="p1"&gt;• The Jmol application is a stand-alone Java application (Jmol.jar) that runs on the desktop. It has all the capabilities of the JSmol applet but runs approximately 3-6 times faster. In addition, it can be run in "headless" mode (JmolData.jar) in order to carry out tasks that need to be replicated.&lt;/p&gt;
+&lt;p class="p1"&gt;• Jmol.jar can be integrated into any other Java program, providing file loading, structure processing, viewing, and output capabilities.&lt;/p&gt;
+&lt;p class="p1"&gt;• Jmol is fully scriptable. For the most up-to-date scripting documentation see the &lt;a target="_blank" href="https://chemapps.stolaf.edu/jmol/docs/"&gt;Jmol/JSmol interactive scripting documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+	<key>developer</key>
+	<string>Sourceforge</string>
+	<key>display_name</key>
+	<string>Jmol/JSmol</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.tonypaco.download.JmolJSmol</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/Applications/</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>source</key>
+                <string>%RECIPE_CACHE_DIR%/unpacked/Applications/jmol-%version%</string>
+                <key>target</key>
+                <string>%RECIPE_CACHE_DIR%/unpacked/Applications/jmol</string>
+            </dict>
+            <key>Processor</key>
+            <string>FileMover</string>
+        </dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>faux_root</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<key>installs_item_paths</key>
+                <array>
+					<string>/Applications/jmol/Jmol.jar</string>
+					<string>/Applications/jmol/jmol.mac</string>
+                </array>
+			</dict>
+ 			<key>Processor</key>
+			<string>MunkiInstallsItemsCreator</string>
+		</dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+		<dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/Applications</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%dmg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>additional_makepkginfo_options</key>
+				<array>
+					<string>--itemname</string>
+					<string>jmol</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+	</array>
+</dict>
+</plist>
