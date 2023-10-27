@@ -8,6 +8,8 @@
 	<string>com.github.tonypaco.munki.JmolJSmol</string>
 	<key>Input</key>
 	<dict>
+		<key>FORCEFULL_MUNKI</key>
+		<string>false</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
@@ -128,6 +130,8 @@
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>force_munkiimport</key>
+				<string>%FORCEFULL_MUNKI%</string>
 				<key>additional_makepkginfo_options</key>
 				<array>
 					<string>--itemname</string>
