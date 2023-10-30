@@ -23,7 +23,7 @@
 				<key>re_pattern</key>
 				<string>ij([0-9][0-9][0-9])-osx</string>
 				<key>url</key>
-				<string>https://imagej.nih.gov/ij/download.html</string>
+				<string>https://imagej.net/ij/download.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
