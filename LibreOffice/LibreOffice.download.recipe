@@ -37,8 +37,10 @@
 				<dict>
 					<key>url</key>
 					<string>%BASE_URL%</string>
+					<key>result_output_var_name</key>
+					<string>version</string>
 					<key>re_pattern</key>
-					<string>(LibreOffice_(?P&lt;version&gt;[0-9]+.[0-9]+.[0-9]+.?[0-9]*)_MacOS_%aux_arch_name%.dmg)</string>
+					<string>LibreOffice_([0-9]+.[0-9]+.[0-9]+.?[0-9]*)_MacOS_%aux_arch_name%.dmg</string>
 				</dict>
 		</dict>
 		<dict>
