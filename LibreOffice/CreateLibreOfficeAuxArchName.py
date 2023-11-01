@@ -14,6 +14,7 @@ class CreateLibreOfficeAuxArchName(Processor):
     }
     output_variables = {
         "aux_arch_name": {"description": "The second form of architecture name used in the download path for x86_64.",}
+        "munki_arch_name": {"description": "The THIRD form of architecture name used in the MunkiImporter processor for arm64.",}
     }
 
     description = __doc__
