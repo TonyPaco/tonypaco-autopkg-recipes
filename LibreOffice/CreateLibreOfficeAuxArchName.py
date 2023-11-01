@@ -22,9 +22,11 @@ class CreateLibreOfficeAuxArchName(Processor):
         if ( self.env["arch_name"] ==  'aarch64'):
             # this architecture name is used consistently
             self.env["aux_arch_name"] = 'aarch64'
+            self.env["munki_arch_name"] = 'arm64'
         elif ( self.env["arch_name"] == 'x86_64' ):
             # for x86_64 they use both forms in the path :(
             self.env["aux_arch_name"] = 'x86-64'
+            self.env["munki_arch_name"] = 'x86_64'
         else:
             self.env["aux_arch_name"] = 'Architecture_' + arch_name + '_not_supported_by_CreateLibreOfficeAuxArchName.'
 if __name__ == "__main__":
