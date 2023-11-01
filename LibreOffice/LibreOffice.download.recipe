@@ -15,7 +15,7 @@
 		<key>BASE_URL</key>
 		<string>https://downloadarchive.documentfoundation.org/libreoffice/old/latest/mac/%ARCH%/</string>
 		<key>SEARCH_PATTERN</key>
-		<string>LibreOffice_(?P&lt;version&gt;[0-9.]+)_MacOS_%aux_arch_name%.dmg</string>
+		<string>(LibreOffice_(?P&lt;version&gt;[0-9]+.[0-9]+.[0-9]+.?[0-9]*)_MacOS_%aux_arch_name%.dmg)</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
