@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.munki.munkitools-signed</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>munkitools</string>
+		<key>MUNKITOOLS_DISPLAYNAME</key>
+		<string>Managed Software Center (MSC) for macOS</string>
+		<key>MUNKITOOLS_DESCRIPTION</key>
+		<string>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+  &lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;meta name="Generator" content="Cocoa HTML Writer"&gt;
+  &lt;meta name="CocoaVersion" content="2113.5"&gt;
+  &lt;style type="text/css"&gt;
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; color: #000000}
+    span.s3 {text-decoration: underline ; font-kerning: none; color: #0000e9}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p class="p1"&gt;&lt;span class="s1"&gt;&lt;b&gt;Release notes can usually be found here: &lt;/b&gt;&lt;a href="https://github.com/munki/munki/releases"&gt;&lt;span class="s3"&gt;https://github.com/munki/munki/releases&lt;/span&gt;&lt;/a&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s1"&gt;Installs/updates the scripts, libraries, binaries, and settings that provide the UW Oshkosh Managed Software Center service to the end user. Not allowing this update will make MSC less secure and cause compatibility issues with the other clients, as well as our MSC server infrastructure, on the campus network.&lt;/span&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+        <key>MUNKI_CATALOG</key>
+        <string>Incoming</string>
+        <key>MUNKI_CATEGORY</key>
+        <string>MSC Framework</string>
+        <key>MUNKI_DEVELOPER</key>
+        <string>Walt Disney Animation Studios</string>
+        <key>MUNKI_ICON</key>
+        <string>munkitools_newHiC.png</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>mscframework/client</string>
+        <key>MUNKITOOLS_MAJOR_VERS</key>
+        <string>6</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.5.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>GitHubReleasesInfoProvider</string>
+            <key>Arguments</key>
+            <dict>
+                <key>asset_regex</key>
+                <string>^munkitools-%MUNKITOOLS_MAJOR_VERS%.*?pkg$</string>
+                <key>github_repo</key>
+                <string>macadmins/munki-builds</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>expected_authority_names</key>
+                <array>
+                    <string>Developer ID Installer: Mac Admins Open Source (T4SK8ZXCXG)</string>
+                    <string>Developer ID Certification Authority</string>
+                    <string>Apple Root CA</string>
+                </array>
+                <key>input_path</key>
+                <string>%pathname%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>pkginfo</key>
+                <dict>
+                    <key>catalogs</key>
+                    <array>
+                        <string>%MUNKI_CATALOG%</string>
+                    </array>
+                    <key>category</key>
+                    <string>%MUNKI_CATEGORY%</string>
+                    <key>description</key>
+                    <string>%MUNKITOOLS_DESCRIPTION%</string>
+                    <key>developer</key>
+                    <string>%MUNKI_DEVELOPER%</string>
+                    <key>display_name</key>
+                    <string>%MUNKITOOLS_DISPLAYNAME%</string>
+                    <key>icon_name</key>
+                    <string>%MUNKI_ICON%</string>
+                    <key>minimum_os_version</key>
+                    <string>10.13</string>
+                    <key>name</key>
+                    <string>%NAME%</string>
+                    <key>unattended_install</key>
+                    <true/>
+                </dict>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
