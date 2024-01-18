@@ -51,9 +51,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/SteerMouse.prefPane</string>
+				<string>%pathname%/SteerMouse.app</string>
 				<key>requirement</key>
-				<string>identifier "jp.plentycom.prefpane.SteerMouse" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UHEB36849R</string>
+				<string>identifier "jp.plentycom.app.SteerMouse" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UHEB36849R</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -62,7 +62,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/SteerMouse.prefPane/Contents/Info.plist</string>
+				<string>%pathname%/SteerMouse.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>

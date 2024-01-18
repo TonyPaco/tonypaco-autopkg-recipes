@@ -55,13 +55,6 @@
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>additional_makepkginfo_options</key>
-				<array>
-					<string>--itemname</string>
-					<string>SteerMouse.prefPane</string>
-					<string>--destinationpath</string>
-					<string>/Library/PreferencePanes</string>
-				</array>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
