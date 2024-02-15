@@ -22,7 +22,7 @@
 			</array>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>Incoming</string>
 			</array>
 			<key>description</key>
 			<string>Measure and certify your disk performance when working with high quality video.</string>
@@ -42,6 +42,45 @@
 	<string>com.github.tonypaco.download.TestGen</string>
 	<key>Process</key>
 	<array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>flat_pkg_path</key>
+                <string>%pathname%</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/unpack</string>
+            </dict>
+            <key>Processor</key>
+            <string>FlatPkgUnpacker</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiInstallsItemsCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>faux_root</key>
+                <string>%RECIPE_CACHE_DIR%/unpack</string>
+                <key>installs_item_paths</key>
+                <array>
+                    <string>/Applications/TestGen/TestGen.app</string>
+                </array>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/unpack</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
