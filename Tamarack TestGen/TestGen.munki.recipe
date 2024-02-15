@@ -22,10 +22,12 @@
 			</array>
 			<key>catalogs</key>
 			<array>
-				<string>Incoming</string>
+				<string>testing</string>
 			</array>
+			<key>category</key>
+			<string>Education</string>
 			<key>description</key>
-			<string>Measure and certify your disk performance when working with high quality video.</string>
+			<string>TestGen is a complete, state-of-the-art test generator software package that allows instructors to easily create and administer tests on paper, electronically, or online.</string>
 			<key>developer</key>
 			<string>Tamarack Software</string>
 			<key>display_name</key>
