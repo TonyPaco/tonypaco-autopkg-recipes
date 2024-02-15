@@ -56,12 +56,34 @@
             <string>FlatPkgUnpacker</string>
         </dict>
         <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkgroot</key>
+                <string>%RECIPE_CACHE_DIR%/payload/root</string>
+                <key>pkgdirs</key>
+                <dict/>
+            </dict>
+            <key>Processor</key>
+            <string>PkgRootCreator</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_payload_path</key>
+                <string>%RECIPE_CACHE_DIR%/unpack/TestGen.pkg/Payload</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/payload/root</string>
+            </dict>
+            <key>Processor</key>
+            <string>PBXZPayloadUnpacker</string>
+        </dict>
+        <dict>
             <key>Processor</key>
             <string>MunkiInstallsItemsCreator</string>
             <key>Arguments</key>
             <dict>
                 <key>faux_root</key>
-                <string>%RECIPE_CACHE_DIR%/unpack</string>
+                <string>%RECIPE_CACHE_DIR%/payload/root</string>
                 <key>installs_item_paths</key>
                 <array>
                     <string>/Applications/TestGen/TestGen.app</string>
@@ -78,6 +100,7 @@
                 <key>path_list</key>
                 <array>
                     <string>%RECIPE_CACHE_DIR%/unpack</string>
+                    <string>%RECIPE_CACHE_DIR%/payload</string>
                 </array>
             </dict>
             <key>Processor</key>
