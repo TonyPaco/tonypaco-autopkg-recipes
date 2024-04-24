@@ -44,6 +44,29 @@
         <string>mscframework/client</string>
         <key>MUNKITOOLS_MAJOR_VERS</key>
         <string>6</string>
+        <key>MUNKI_UNINSTALL_METHOD</key>
+        <string>uninstall_script</string>
+        <key>MUNKI_UNINSTALL_SCRIPT</key>
+        <string>#!/usr/bin/env zsh
+/bin/launchctl unload /Library/LaunchDaemons/com.googlecode.munki.*
+
+/bin/rm -rf "/Applications/Managed Software Center.app"
+
+/bin/rm -f /Library/LaunchDaemons/com.googlecode.munki.*
+/bin/rm -f /Library/LaunchAgents/com.googlecode.munki.*
+/bin/rm -rf "/Library/Managed Installs"
+/bin/rm -rf /usr/local/munki
+/bin/rm /etc/paths.d/munki
+/bin/rm /Library/Preferences/ManagedInstalls.plist
+
+/usr/sbin/pkgutil --forget com.googlecode.munki.admin
+/usr/sbin/pkgutil --forget com.googlecode.munki.app
+/usr/sbin/pkgutil --forget com.googlecode.munki.core
+/usr/sbin/pkgutil --forget com.googlecode.munki.launchd
+/usr/sbin/pkgutil --forget com.googlecode.munki.app_usage
+/usr/sbin/pkgutil --forget com.googlecode.munki.python
+
+exit 0</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
@@ -114,6 +137,10 @@
                     <string>%NAME%</string>
                     <key>unattended_install</key>
                     <true/>
+                    <key>uninstall_method</key>
+                    <string>%MUNKI_UNINSTALL_METHOD%</string>
+                    <key>uninstall_script</key>
+                    <string>%MUNKI_UNINSTALL_SCRIPT%</string>
                 </dict>
             </dict>
         </dict>
