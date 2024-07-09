@@ -99,7 +99,7 @@ exit 0</string>
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%ARCH%.dmg</string>
 				<key>dmg_root</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked/usr/local</string>
 			</dict>
