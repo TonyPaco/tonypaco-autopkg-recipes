@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release version of Google Cloud SDK</string>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.download.GoogleCloudSDK</string>
+	<key>Comment</key>
+	<string>ARCH is 'x86_64' for Intel (Default), 'arm' for Apple Silicon</string>
+  <key>Input</key>
+  <dict>
+    <key>NAME</key>
+    <string>Google_Cloud_SDK</string>
+	<key>ARCH</key>
+	<string>x86_64</string>
+    <key>BASE_URL</key>
+    <string>https://cloud.google.com/sdk/docs/quickstart-macos</string>
+	<key>DOWNLOAD_URL</key>
+	<string>https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-darwin-%ARCH%.tar.gz</string>
+	<key>VERSION_SEARCH_PATTERN</key>
+	<string>data-text="Installing the latest gcloud CLI version \((?P&lt;version&gt;[0-9.]+)\)"</string>
+  </dict>
+  <key>Process</key>
+  <array>
+    <dict>
+      <key>Processor</key>
+      <string>URLTextSearcher</string>
+      <key>Arguments</key>
+      <dict>
+        <key>url</key>
+        <string>%BASE_URL%</string>
+        <key>re_pattern</key>
+        <string>%VERSION_SEARCH_PATTERN%</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>Processor</key>
+      <string>URLDownloader</string>
+      <key>Arguments</key>
+      <dict>
+        <key>url</key>
+        <string>%DOWNLOAD_URL%</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>Processor</key>
+      <string>EndOfCheckPhase</string>
+    </dict>
+  </array>
+</dict>
+</plist>
