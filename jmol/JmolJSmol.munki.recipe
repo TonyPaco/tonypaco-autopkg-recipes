@@ -53,7 +53,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.tonypaco.download.JmolJSmol</string>
+	<string>com.github.tonypaco.pkg.JmolJSmol</string>
 	<key>Process</key>
 	<array>
 		<dict>
