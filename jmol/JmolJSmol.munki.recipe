@@ -8,8 +8,6 @@
 	<string>com.github.tonypaco.munki.JmolJSmol</string>
 	<key>Input</key>
 	<dict>
-		<key>FORCEFULL_MUNKI</key>
-		<string>false</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
@@ -61,32 +59,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/Applications/</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>source</key>
-                <string>%RECIPE_CACHE_DIR%/unpacked/Applications/jmol-%version%</string>
-                <key>target</key>
-                <string>%RECIPE_CACHE_DIR%/unpacked/Applications/jmol</string>
-            </dict>
-            <key>Processor</key>
-            <string>FileMover</string>
-        </dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>faux_root</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
 				<key>installs_item_paths</key>
                 <array>
 					<string>/Applications/jmol/Jmol.jar</string>
@@ -115,37 +89,30 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/Applications</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pkg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>force_munkiimport</key>
-				<string>%FORCEFULL_MUNKI%</string>
-				<key>additional_makepkginfo_options</key>
-				<array>
-					<string>--itemname</string>
-					<string>jmol</string>
-				</array>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
 		</dict>
+        <dict>
+            <key>Comment</key>
+            <string>Ensure we actually imported something</string>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>munki_repo_changed == FALSE</string>
+            </dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
 			</dict>
 			<key>Processor</key>
 			<string>PathDeleter</string>
