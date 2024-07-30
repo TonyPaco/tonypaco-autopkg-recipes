@@ -36,7 +36,7 @@
 		<key>Arguments</key>
 		<dict>
 			<key>filename</key>
-			<string>%NAME%.gz</string>
+			<string>%NAME%.zip</string>
 			<key>url</key>
 			<string>https://uofi.box.com/shared/static/%pkgrandname%.gz</string>
 		</dict>
