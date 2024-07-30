@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of wxMacMolPlt and imports it into Munki.</string>
+	<string>Downloads the latest version of wxMacMolPlt and imports it into Munki. </string>
 	<key>Identifier</key>
 	<string>com.github.tonypaco.munki.wxMacMolPlt</string>
 	<key>Input</key>
