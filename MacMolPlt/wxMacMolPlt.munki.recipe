@@ -41,6 +41,8 @@
 			<dict>
 				<key>faux_root</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+                <key>derive_minimum_os_version</key>
+                <string>%DERIVE_MIN_OS%</string>
 				<key>installs_item_paths</key>
                 <array>
 					<string>/Applications/MacMolPlt/wxMacMolPlt.app</string>
