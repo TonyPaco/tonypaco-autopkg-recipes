@@ -13,7 +13,7 @@
 		<key>BASE_URL</key>
 		<string>https://brettbode.github.io/wxmacmolplt/downloads.html</string>
 		<key>PKG_SEARCH_PATTERN</key>
-		<string>(<H3>Mac OS X</H3>\s*<UL>\s*<LI><a href="https://uofi\.box\.com/shared/static/(?P<pkgrandname>[0-9a-z]{32})\.gz")></string>
+		<string>(<H3>Mac OS X<\/H3>\s*<UL>\s*<LI><a href="https://uofi\.box\.com/shared/static/(?P<pkgrandname>[0-9a-z]{32})\.gz")></string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
