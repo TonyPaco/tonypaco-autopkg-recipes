@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Focusrite Control.</string>
 	<key>Identifier</key>
@@ -11,22 +9,37 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Focusrite Control</string>
+		<string>FocusriteControlScarlett18i20</string>
+		<key>BASE_URL</key>
+		<string>https://downloads.focusrite.com/focusrite/scarlett-3rd-gen/scarlett-18i20-3rd-gen</string>
+		<key>DMG_SEARCH_PATTERN</key>
+		<string>(https:\/\/fael-downloads-prod.focusrite.com\/customer\/prod\/downloads\/focusrite-control-[0-9]+\.[0-9]*\.dmg)</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
+		<key>Processor</key>
+		<string>URLTextSearcher</string>
+		<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%BASE_URL%</string>
+				<key>re_pattern</key>
+				<string>%DMG_SEARCH_PATTERN%</string>
+			</dict>
+		</dict>
+		<dict>
+		<key>Processor</key>
+		<string>URLDownloader</string>
+		<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://fael-downloads-prod.focusrite.com/customer/prod/downloads/focusrite_control_0.dmg</string>
+				<string>%match%</string>
 			</dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

@@ -2,16 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Focusrite Control and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.tonypaco.munki.FocusriteControl</string>
 	<key>Input</key>
 	<dict>
+		<key>DERIVE_MIN_OS</key>
+		<string>true</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>labs/FocusriteControl/%NAME%</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>FocusriteControlScarlett18i20</string>
 		<key>pkginfo</key>
@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>ParentRecipe</key>
 	<string>com.github.tonypaco.download.FocusriteControl</string>
 	<key>Process</key>
@@ -50,6 +50,8 @@
 				<dict>
 					<key>faux_root</key>
 					<string>%RECIPE_CACHE_DIR%/payload</string>
+                	<key>derive_minimum_os_version</key>
+                	<string>%DERIVE_MIN_OS%</string>
 					<key>installs_item_paths</key>
 					<array>
 						<string>/Applications/Focusrite Control.app</string>
