@@ -10,6 +10,10 @@
 	<string>com.github.tonypaco.munki.ProPresenter</string>
 	<key>Input</key>
 	<dict>
+		<key>SEARCH_URL</key>
+		<string>https://renewedvision.com/propresenter/download</string>
+		<key>SEARCH_PATTERN</key>
+		<string>propresenter/mac/ProPresenter_([0-9]+[0-9]*\.?[0-9]+\.?[0-9]*_\d{9,}).zip</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.3.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of ProPresenter.</string>
 	<key>Identifier</key>
@@ -12,6 +10,10 @@
 	<dict>
 		<key>NAME</key>
 		<string>ProPresenter</string>
+		<key>SEARCH_URL</key>
+		<string>https://renewedvision.com/propresenter/download</string>
+		<key>SEARCH_PATTERN</key>
+		<string>propresenter/mac/ProPresenter_([0-9]+[0-9]*\.?[0-9]+\.?[0-9]*_\d{9,}).zip</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -23,9 +25,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://renewedvision.com/propresenter/</string>
+                <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
-                <string>propresenter/mac/ProPresenter_([0-9]+.[0-9]+.?[0-9]*_\d{9,}).zip</string>
+                <string>%SEARCH_PATTERN%</string>
 				<key>result_output_var_name</key>
                 <string>match</string>
             </dict>
