@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.3.1 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Synergy Editor and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.munki.SynergyEditor</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>Synergy Editor</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>Incoming</string>
+			</array>
+			<key>category</key>
+			<string>Video Editing &amp; Compression Tools</string>
+			<key>description</key>
+			<string>Synergy Sports is excited to introduce Synergy Editor 12! Designed to provide you with a best-in-industry user experience integrated into the Synergy environment, the Synergy Editor 12 retains and refines all of the features that make the Editor unique while adding many new features to ease the workflow and provide an unparalleled experience. </string>
+			<key>developer</key>
+			<string>Synergy Sports Technology, LLC</string>
+			<key>display_name</key>
+			<string>Synergy Editor</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.tonypaco.download.SynergyEditor</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
