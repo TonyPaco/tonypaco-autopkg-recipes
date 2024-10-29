@@ -13,7 +13,7 @@
 		<key>SEARCH_URL</key>
 		<string>https://knowledge.kaltura.com/help/kaltura-capture-release-notes</string>
         <key>USER_AGENT</key>
-        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.214 Safari/537.36</string>
+        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
