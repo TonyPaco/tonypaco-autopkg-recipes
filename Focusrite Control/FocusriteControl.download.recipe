@@ -13,7 +13,7 @@
 		<key>BASE_URL</key>
 		<string>https://downloads.focusrite.com/focusrite/scarlett-3rd-gen/scarlett-18i20-3rd-gen</string>
 		<key>DMG_SEARCH_PATTERN</key>
-		<string>(https:\/\/fael-downloads-prod.focusrite.com\/customer\/prod\/downloads\/focusrite-control-[0-9]+\.[0-9]*\.dmg)</string>
+		<string>(https:\/\/fael-downloads-prod.focusrite.com\/customer\/prod\/downloads\/focusrite(-|_)control(-|_)[0-9]+\.[0-9]*\.?[0-9]*\.dmg)</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
