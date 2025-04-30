@@ -92,6 +92,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>path_list</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
@@ -104,15 +113,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>path_list</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked</string>
-			</dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>
