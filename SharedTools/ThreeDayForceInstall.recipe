@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Calculates a force_after variable of 3 days from time of execution to insert into an imported Munki item</string>
+    <key>Identifier</key>
+    <string>com.github.tonypaco.ThreeDayForceInstall</string>
+    <key>MinimumVersion</key>
+    <string>1.4</string>
+    <key>Input</key>
+    <dict>
+        <key>DAYSFROMNOW</key>
+        <string>3</string>
+    </dict>
+    <key>Process</key>
+    <array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>deltas</key>
+				<array>
+					<dict>
+						<key>datetime_format</key>
+						<string>%Y-%m-%d</string>
+						<key>direction</key>
+						<string>future</string>
+						<key>interval</key>
+						<dict>
+							<key>days</key>
+							<integer>3</integer>
+						</dict>
+						<key>output_name</key>
+						<string>force_after</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.haircut.processors/DatetimeOutputter</string>
+		</dict>
+    </array>
+</dict>
+</plist>
