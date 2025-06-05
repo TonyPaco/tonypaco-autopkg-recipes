@@ -12,8 +12,6 @@
 		<string>apps</string>
 		<key>NAME</key>
 		<string>Vivaldi</string>
-		<key>DAYSTOFORCEINSTALL</key>
-		<integer>3</integer>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -51,7 +49,7 @@
 						<key>interval</key>
 						<dict>
 							<key>days</key>
-							<integer>%DAYSTOFORCEINSTALL%</integer>
+							<integer>3</integer>
 						</dict>
 						<key>output_name</key>
 						<string>force_after</string>
