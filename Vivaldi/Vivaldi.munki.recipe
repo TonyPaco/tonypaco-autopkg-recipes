@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Vivaldi</string>
 		<key>DAYSTOFORCEINSTALL</key>
-		<string>3</string>
+		<integer>3</integer>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
