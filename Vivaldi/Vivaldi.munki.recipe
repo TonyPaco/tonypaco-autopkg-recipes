@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Almost exact copy of com.github.homebysix.munki.Vivaldi except adding the DatetimeOutputter processor to force an install.</string>
+    <key>Identifier</key>
+    <string>com.github.tonypaco.munki.Vivaldi</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps</string>
+		<key>NAME</key>
+		<string>Vivaldi</string>
+		<key>DAYSTOFORCEINSTALL</key>
+		<string>3</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>A browser for our friends.</string>
+			<key>developer</key>
+			<string>Vivaldi Technologies</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+    <key>MinimumVersion</key>
+    <string>2.7</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.Vivaldi</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>deltas</key>
+				<array>
+					<dict>
+						<key>datetime_format</key>
+						<string>%Y-%m-%d</string>
+						<key>direction</key>
+						<string>future</string>
+						<key>interval</key>
+						<dict>
+							<key>days</key>
+							<integer>%DAYSTOFORCEINSTALL%</integer>
+						</dict>
+						<key>output_name</key>
+						<string>force_after</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.haircut.processors/DatetimeOutputter</string>
+		</dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+				<key>additional_makepkginfo_options</key>
+				<array>
+					<string>--force_install_after_date</string>
+					<string>%force_after%T16:00:00Z</string>
+				</array>
+            </dict>
+        </dict>
+	</array>
+</dict>
+</plist>
