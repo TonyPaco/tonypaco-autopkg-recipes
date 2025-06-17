@@ -139,7 +139,7 @@
 				<key>deltas</key>
 				<array>
 					<dict>
-						<key>datetime_format</key>
+						<key>format</key>
 						<string>%Y-%m-%d</string>
 						<key>direction</key>
 						<string>future</string>
