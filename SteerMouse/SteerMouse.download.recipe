@@ -12,8 +12,10 @@
 		<string>SteerMouse</string>
         <key>SEARCH_URL</key>
         <string>https://plentycom.jp/en/steermouse/download.php</string>
+        <key>DOWNLOAD_PATH</key>
+        <string>https://plentycom.jp/ctrl/files_sm/</string>
         <key>SEARCH_PATTERN</key>
-		<string>(https://plentycom.jp/ctrl/files_sm/SteerMouse([0-9]+.[0-9]+.?[0-9]*.?[0-9]*).dmg)</string>
+		<string>(SteerMouse([0-9]+.[0-9]+.?[0-9]*.?[0-9]*).dmg)</string>
 </dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -27,7 +29,7 @@
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
-                <string>%SEARCH_PATTERN%</string>
+                <string>%DOWNLOAD_PATH%%SEARCH_PATTERN%</string>
                 <key>result_output_var_name</key>
                 <string>match</string>
             </dict>
