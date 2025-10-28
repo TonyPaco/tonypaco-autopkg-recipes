@@ -42,7 +42,7 @@ Set DOWNLOAD_ARCHITECTURE "" to download the Intel or "-arm64" for Apple Silicon
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%%DOWNLOAD_ARCHITECTURE%.dmg</string>
+				<string>%NAME%%DOWNLOAD_ARCHITECTURE%-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
