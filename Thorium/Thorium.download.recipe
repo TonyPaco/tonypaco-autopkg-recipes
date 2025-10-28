@@ -2,20 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest version of Thorium.
+    	<key>Description</key>
+    	<string>Downloads the latest version of Thorium.
 
 Set PRERELEASE to a non-empty string to download prereleases, either
 via Input in an override or via the -k option,
 i.e.: `-k PRERELEASE=yes`
 
-Set DOWNLOAD_ARCHITECTURE "" to download the Intel or "-aarch64" for Apple Silicon.</string>
+Set DOWNLOAD_ARCHITECTURE "" to download the Intel or "-arm64" for Apple Silicon.</string>
 	<key>Identifier</key>
 	<string>com.github.tonypaco.download.Thorium</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>Thorium</string>
+		<key>PRERELEASE</key>
+		<string></string>
         <key>DOWNLOAD_ARCHITECTURE</key>
         <string></string>
 	</dict>
