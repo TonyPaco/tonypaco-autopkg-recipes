@@ -29,6 +29,7 @@
                 <key>result_output_var_name</key>
                 <string>match</string>
             </dict>
+	 </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
