@@ -52,7 +52,7 @@
 				<array>
 					<dict>
 						<key>format</key>
-						<date>%Y-%m-%d</date>
+						<string>%Y-%m-%d</string>
 						<key>direction</key>
 						<string>future</string>
 						<key>interval</key>
