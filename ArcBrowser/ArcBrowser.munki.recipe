@@ -68,6 +68,8 @@
 				<dict>
 					<key>version</key>
 					<string>%version%</string>
+					<key>force_install_after_date</key>
+					<string>%force_after%T16:00:00Z</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
@@ -91,11 +93,6 @@
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>additional_makepkginfo_options</key>
-				<array>
-					<string>--force_install_after_date</string>
-					<string>%force_after%T16:00:00Z</string>
-				</array>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

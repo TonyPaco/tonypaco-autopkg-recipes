@@ -64,6 +64,18 @@ See the following URLs for more info:
 			<key>Processor</key>
 			<string>com.github.haircut.processors/DatetimeOutputter</string>
 		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>force_install_after_date</key>
+					<string>%force_after%T16:00:00Z</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
         <dict>
             <key>Arguments</key>
             <dict>
@@ -71,11 +83,6 @@ See the following URLs for more info:
                 <string>%pathname%</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
- 				<key>additional_makepkginfo_options</key>
-				<array>
-					<string>--force_install_after_date</string>
-					<string>%force_after%T16:00:00Z</string>
-				</array>
            </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
