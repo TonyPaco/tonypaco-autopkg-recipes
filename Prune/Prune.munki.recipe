@@ -4,26 +4,37 @@
 <dict>
 	<key>Description</key>
 	<string>Imports Prune into Munki.</string>
+
 	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.munki.Prune</string>
+	<string>com.github.uwoshkosh.munki.Prune</string>
+
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Prune</string>
+
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
-				<string>Incoming</string>
+				<string>testing</string>
 			</array>
+
 			<key>category</key>
 			<string>Admin Tools</string>
+
 			<key>developer</key>
 			<string>BIG-RAT</string>
+
 			<key>display_name</key>
 			<string>%NAME%</string>
+
+			<key>name</key>
+			<string>%NAME%</string>
+
 			<key>installs</key>
 			<array>
 				<dict>
@@ -33,14 +44,15 @@
 					<string>application</string>
 				</dict>
 			</array>
-			<key>name</key>
-			<string>%NAME%</string>
+
 			<key>uninstall_method</key>
 			<string>remove_app</string>
 		</dict>
 	</dict>
+
 	<key>ParentRecipe</key>
 	<string>com.github.ahousseini-recipes.pkg.Prune</string>
+
 	<key>Process</key>
 	<array>
 		<dict>
