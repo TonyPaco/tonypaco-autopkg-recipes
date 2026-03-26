@@ -6,7 +6,7 @@
 	<string>Imports Prune into Munki.</string>
 
 	<key>Identifier</key>
-	<string>com.github.uwoshkosh.munki.Prune</string>
+	<string>com.github.tonypaco.munki.Prune</string>
 
 	<key>Input</key>
 	<dict>
