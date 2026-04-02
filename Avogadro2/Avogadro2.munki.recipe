@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.5.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Avogadro2.
+
+Set PRERELEASE to a non-empty string to download prereleases, either
+via Input in an override or via the -k option,
+i.e.: `-k PRERELEASE=yes`
+
+Set DOWNLOAD_ARCHITECTURE "" to download the Intel or "-arm64" for Apple Silicon. [Default: Intel]
+Set MUNKI_ARCHITECTURE "x86_64" for Intel or "arm64" for Apple Silicon. [Default: Intel]</string>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.munki.Avogadro2</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>Avogadro2</string>
+		<key>PRERELEASE</key>
+		<string></string>
+        <key>DOWNLOAD_ARCHITECTURE</key>
+        <string></string>
+        <key>MUNKI_ARCHITECTURE</key>
+        <string>x86_64</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Avogadro is an advanced molecular editor designed for cross-platform use in computational chemistry, molecular modeling, education, bioinformatics, materials science, and related areas. It offers flexible rendering and a powerful plugin architecture.</string>
+			<key>developer</key>
+			<string>Geoffrey Hutchison</string>
+			<key>display_name</key>
+			<string>Avogadro2</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>supported_architectures</key>
+			<array>
+				<string>%MUNKI_ARCHITECTURE%</string>
+			</array>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.tonypaco.download.Avogadro2</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
