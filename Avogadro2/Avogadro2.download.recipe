@@ -40,7 +40,7 @@ Set MUNKI_ARCHITECTURE "x86_64" for Intel or "arm64" for Apple Silicon. [Default
                 <key>include_prereleases</key>
                 <string>%PRERELEASE%</string>
                 <key>asset_regex</key>
-                <string>Avogadro2-([0-9]+(\.[0-9]+)+)-Darwin%DOWNLOAD_ARCHITECTURE%arm64.dmg$</string>
+                <string>Avogadro2-([0-9]+(\.[0-9]+)+)-Darwin%DOWNLOAD_ARCHITECTURE%.dmg$</string>
 			</dict>
 		</dict>
 		<dict>
