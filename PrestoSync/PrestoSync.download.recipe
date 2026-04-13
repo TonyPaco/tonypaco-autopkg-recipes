@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of PrestoSync.</string>
+	<key>Identifier</key>
+	<string>com.github.tonypaco.download.PrestoSync</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>PrestoSync</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>https://help.prestosports.com/PrestoStats/v1/prestosync-setup-and-download</string>
+                <key>re_pattern</key>
+                <string>(https://dl.prestosports.com/PS_Sync/PrestoSync-\d*\.*\d*\.*\d*\.*dmg)</string>
+                <key>result_output_var_name</key>
+                <string>match</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>User-Agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15</string>
+                </dict>
+            </dict>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>User-Agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15</string>
+                </dict>
+				<key>url</key>
+				<string>%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
