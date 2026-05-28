@@ -39,10 +39,28 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>info_path</key>
+				<string>%pathname%/SteerMouse.app/Contents/Info.plist</string>
+				<key>plist_keys</key>
+				<dict>
+					<key>CFBundleVersion</key>
+					<string>version</string>
+					<key>LSMinimumSystemVersion</key>
+					<string>min_os_version</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>additional_pkginfo</key>
 				<dict>
 					<key>version</key>
 					<string>%version%</string>
+					<key>minimum_os_version</key>
+					<string>%min_os_version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
