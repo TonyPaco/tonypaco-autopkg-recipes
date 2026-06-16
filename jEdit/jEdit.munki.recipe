@@ -39,7 +39,7 @@
 			<key>postinstall_script</key>
 			<string>#!/bin/sh
 
-sudo spctl --add "/Applications/jEdit.app"
+spctl --add "/Applications/jEdit.app"
 
 exit 0</string>
 			<key>preuninstall_script</key>
