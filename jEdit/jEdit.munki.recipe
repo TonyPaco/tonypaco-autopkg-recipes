@@ -26,6 +26,8 @@
 			<string>jEdit project</string>
 			<key>display_name</key>
 			<string>jEdit</string>
+			<key>icon_name</key>
+			<string>jEdit_icon.png</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>minimum_os_version</key>
@@ -43,7 +45,7 @@ exit 0</string>
 			<key>preuninstall_script</key>
 			<string>#!/bin/sh
 
-sudo spctl --remove "/Applications/jEdit.app"
+spctl --remove "/Applications/jEdit.app"
 
 exit 0</string>
 		</dict>
