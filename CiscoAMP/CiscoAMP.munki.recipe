@@ -42,7 +42,7 @@ DOWNLOAD_URL can be found at https://console.amp.cisco.com/download_connector
 	<key>MinimumVersion</key>
 	<string>1.1.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.n8felton.download.CiscoAMP</string>
+	<string>com.github.tonypaco.download.CiscoAMP</string>
 	<key>Process</key>
 	<array>
 		<dict>
