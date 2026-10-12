@@ -9,7 +9,7 @@ Set PRERELEASE to a non-empty string to download prereleases, either
 via Input in an override or via the -k option,
 i.e.: `-k PRERELEASE=yes`
 
-Set DOWNLOAD_ARCHITECTURE "" to download the Intel or "-arm64" for Apple Silicon.</string>
+Set DOWNLOAD_ARCHITECTURE "-x64" to download the Intel or "-arm64" for Apple Silicon [Default].</string>
 	<key>Identifier</key>
 	<string>com.github.tonypaco.download.Thorium</string>
 	<key>Input</key>
@@ -19,7 +19,7 @@ Set DOWNLOAD_ARCHITECTURE "" to download the Intel or "-arm64" for Apple Silicon
 		<key>PRERELEASE</key>
 		<string></string>
         <key>DOWNLOAD_ARCHITECTURE</key>
-        <string></string>
+        <string>-arm64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
