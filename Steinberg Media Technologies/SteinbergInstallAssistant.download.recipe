@@ -23,7 +23,7 @@
 				<key>prefetch_filename</key>
 				<string>true</string>
 				<key>url</key>
-				<string>https://steinberg.net/sia-mac</string>
+				<string>https://www.steinberg.net/sia-mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
