@@ -23,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://steinberg.net/sam-mac</string>
+				<string>https:wwww.//steinberg.net/sam-mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
